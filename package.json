@@ -1,0 +1,25 @@
+{
+  "name": "508-color-checker",
+  "version": "0.0.0",
+  "description": "A simple utility to check if two colors are compliant WCAG AA or WCAG AAA standards.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msecret/508-color-checker.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "Marco Segreto",
+  "license": "Public Domain",
+  "bugs": {
+    "url": "https://github.com/msecret/508-color-checker/issues"
+  },
+  "homepage": "https://github.com/msecret/508-color-checker",
+  "devDependencies": {
+    "spider-script": "^0.1.5"
+  }
+}
