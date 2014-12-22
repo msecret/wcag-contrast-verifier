@@ -90,3 +90,95 @@ exports.getContrastRatioTests = {
     test.done();
   }
 };
+
+exports.verifyContrastRatioTests = {
+  testExistance: function(test) {
+    test.ok(wcag.verifyContrastRatio, 'It should exist');
+    test.done();
+  },
+  testWithBlackandWhiteSmFont: function(test) {
+    var testColorA = '#ffffff',
+        testColorB = '#000000',
+        testFontSize = 14,
+        actual;
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, testFontSize);
+
+    test.ok(actual.WCAG_AA, 'Black and white should pass WCAG AA');
+    test.ok(actual.WCAG_AAA, 'Black and white should pass WCAG AAA');
+
+    test.done();
+  },
+  testWithNoFontSize: function(test) {
+    var testColorA = '#1c1c09',
+        testColorB = '#d448cf',
+        actual;
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB);
+
+    test.ok(actual.WCAG_AA, 'Default font size should pass with color value ' +
+        'for AA');
+    test.ok(!actual.WCAG_AAA, 'Default font size should pass with color value ' +
+        'for AAA');
+
+    test.done();
+  },
+  testWithLargeText: function(test) {
+    var testColorA = '#303011',
+        testColorB = '#d448cf',
+        testFontSize = 19,
+        actual;
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, testFontSize);
+
+    test.ok(actual.WCAG_AA, 'Large text should pass with AA');
+    test.ok(!actual.WCAG_AAA, 'Large text should fail with AAA');
+
+    test.done();
+  },
+  testBothFail: function(test) {
+    var testColorA = '#a65cd5',
+        testColorB = '#d48551',
+        actual;
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, 8);
+
+    test.ok(!actual.WCAG_AA, 'AA should fail');
+    test.ok(!actual.WCAG_AAA, 'AAA should fail');
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, 22);
+
+    test.ok(!actual.WCAG_AA, 'AA should fail');
+    test.ok(!actual.WCAG_AAA, 'AAA should fail');
+
+    test.done();
+  },
+  testAAPass: function(test) {
+    var testColorA = '#2f5015',
+        testColorB = '#d4aeb5',
+        actual;
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, 16);
+
+    test.ok(actual.WCAG_AA, 'AA should pass');
+    test.ok(!actual.WCAG_AAA, 'AAA should fail');
+
+    actual = wcag.verifyContrastRatio(testColorA, testColorB, 18);
+
+    test.ok(actual.WCAG_AA, 'AA should pass');
+    test.ok(actual.WCAG_AAA, 'AAA should pass');
+
+    test.done();
+  },
+  testToString: function(test) {
+    var actual,
+        expected = '< WCAG-AA: pass WCAG-AAA: fail >';
+
+    actual = wcag.verifyContrastRatio('#ffffff', '#6a6a6a');
+
+    test.equal(actual.toString(), expected, 'The to string functino returns ' +
+        'the correct representation of the results');
+
+    test.done();
+  }
+};
