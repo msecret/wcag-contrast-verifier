@@ -1,25 +1,33 @@
 {
-  "name": "508-color-checker",
-  "version": "0.0.0",
-  "description": "A simple utility to check if two colors are compliant WCAG AA or WCAG AAA standards.",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run test"
+  "name": "wcag-contrast-verifier",
+  "description": "Check that two colors are wcag AA and AAA compliant.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/msecret/wcag-contrast-verifier",
+  "author": {
+    "name": "Marco Secreto",
+    "email": "msegreto@miceover.com",
+    "url": "http://miceover.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/msecret/508-color-checker.git"
+    "url": "git://github.com/msecret/wcag-contrast-verifier.git"
   },
-  "keywords": [
-    "accessibility"
-  ],
-  "author": "Marco Segreto",
-  "license": "Public Domain",
   "bugs": {
-    "url": "https://github.com/msecret/508-color-checker/issues"
+    "url": "https://github.com/msecret/wcag-contrast-verifier/issues"
   },
-  "homepage": "https://github.com/msecret/508-color-checker",
+  "license": "Public Domain",
+  "main": "wcag-constrast-verifier",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
-    "spider-script": "^0.1.5"
-  }
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "keywords": []
 }
