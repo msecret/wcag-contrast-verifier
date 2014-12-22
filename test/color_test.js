@@ -45,5 +45,29 @@ exports.relativeLuminance = {
           'correct value');
 
     test.done();
+  },
+  testRGBColor: function(test) {
+    var testColor = {r: 122, g: 255, b: 18},
+        expected = 0.75701,
+        actual;
+
+    actual = color.relativeLuminance(testColor);
+    test.strictEqual(parseFloat(actual.toFixed(5)),
+      expected, 'The returned luminance value is the pre-calculated ' +
+          'correct value');
+
+    test.done();
+  },
+  testRGBAColor: function(test) {
+    var testColor = {r: 122, g: 255, b: 18, a: 0.2},
+        expected = 0.75701,
+        actual;
+
+    actual = color.relativeLuminance(testColor);
+    test.strictEqual(parseFloat(actual.toFixed(5)),
+      expected, 'The returned luminance value is the pre-calculated ' +
+          'correct value');
+
+    test.done();
   }
 };
