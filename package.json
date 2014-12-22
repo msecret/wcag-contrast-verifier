@@ -16,7 +16,7 @@
     "url": "https://github.com/msecret/wcag-contrast-verifier/issues"
   },
   "license": "Public Domain",
-  "main": "wcag-constrast-verifier",
+  "main": "index.js",
   "engines": {
     "node": ">= 0.8.0"
   },

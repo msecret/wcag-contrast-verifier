@@ -8,7 +8,7 @@ Check that two colors are wcag AA and AAA compliant.
 Install the module with: `npm install wcag-contrast-verifier`
 
 ```javascript
-var verify = require('wcag-constrast_verifier').verify;
+var verify = require('wcag-constrast-verifier').verify;
 
 var result = verify('#ffffff', '#aa3177', 22);
 // -> {WCAG_AA: true|false, WCAG_AAA: true|false}
