@@ -2,7 +2,7 @@
 
 var color = require('../lib/color');
 
-exports.relativeLuminance = {
+exports.relativeLuminanceTests = {
   testExistance: function(test) {
     test.ok(color.relativeLuminance, 'It should exist');
     test.done();
