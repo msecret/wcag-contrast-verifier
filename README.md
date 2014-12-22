@@ -22,7 +22,7 @@ var result = verify(
 ```
 
 ## Documentation
-Verify
+Verify<br>
 Params:
 * color 1 {Object | String} : A color in the form of a object with separate r,
   g, b int 255 values or a hex code string prefaced with a hash (#).
@@ -37,7 +37,7 @@ _(Coming soon)_
 _(Nothing yet)_
 
 ## Contributers
-Marco Segreto
+Marco Segreto<br>
 Victoria Nguyen
 
 ## License
