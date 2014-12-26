@@ -1,7 +1,7 @@
 {
   "name": "wcag-contrast-verifier",
   "description": "Check that two colors are wcag AA and AAA compliant.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/msecret/wcag-contrast-verifier",
   "author": {
     "name": "Marco Secreto",
