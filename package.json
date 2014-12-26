@@ -17,6 +17,9 @@
   },
   "license": "Public Domain",
   "main": "index.js",
+  "bin": {
+    "wcag-contrast-verifier": "command.js"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -29,5 +32,8 @@
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "commander": "^2.5.1"
+  }
 }
